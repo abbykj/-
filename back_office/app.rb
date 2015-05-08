@@ -1,3 +1,4 @@
+# coding: utf-8
 require 'mongo'
 require 'sinatra'
 require 'mongo'
@@ -14,8 +15,9 @@ configure do
 end
 
 get '/' do
-  content_type :json
-  settings.mongo_db.collection_names.to_json
+  # content_type :json
+  # settings.mongo_db.collection_names.to_json
+  "要么不活 要么活100"
 end
 
 post '/' do
