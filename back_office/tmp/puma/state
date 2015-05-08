@@ -1,0 +1,25 @@
+---
+pid: 94221
+config: !ruby/object:Puma::Configuration
+  options:
+    :min_threads: 4
+    :max_threads: 8
+    :quiet: true
+    :debug: false
+    :binds:
+    - unix:///Users/wade/RailsPro/120/back_office/tmp/puma/socket/120.sock
+    :workers: 0
+    :daemon: true
+    :worker_directory: "/Users/wade/RailsPro/120/back_office"
+    :config_file: puma.rb
+    :mode: :http
+    :worker_timeout: 60
+    :worker_shutdown_timeout: 30
+    :pidfile: "/Users/wade/RailsPro/120/back_office/tmp/puma/pid"
+    :state: "/Users/wade/RailsPro/120/back_office/tmp/puma/state"
+    :rackup: "/Users/wade/RailsPro/120/back_office/config.ru"
+    :control_url: unix:///var/folders/s3/rv_w6r915dq8xykf7y5rfb0m0000gn/T/puma-status-1431078168710-94219
+    :control_url_temp: "/var/folders/s3/rv_w6r915dq8xykf7y5rfb0m0000gn/T/puma-status-1431078168710-94219"
+    :control_auth_token: d095c1baf3b59d8a7f3eace0627da4b0
+    :tag: back_office
+    :environment: development
