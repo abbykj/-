@@ -2,6 +2,7 @@
 source 'http://ruby.taobao.org'
 
 gem 'sinatra'
+gem 'sinatra-contrib'
 gem 'mongo'
 gem 'bson_ext'
 gem 'mina'

@@ -2,5 +2,6 @@
  
 require './app'
 
-Pumatra.run!
-# run Pumatra
+#Pumatra.run!
+#run Pumatra
+run Sinatra::Application
