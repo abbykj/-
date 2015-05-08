@@ -1,0 +1,9 @@
+# A sample Gemfile
+source 'http://ruby.taobao.org'
+
+gem 'sinatra'
+gem 'mongo'
+gem 'bson_ext'
+gem 'mina'
+
+gem 'puma'

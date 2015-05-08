@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>地图显示</title>
+    <style type="text/css">
+     body{margin:0;height:100%;width:100%;position:absolute;}
+     #mapContainer{height:100%;width:100%;}
+    </style>
+  </head>
+  <body>
+    <div id="mapContainer"></div>
+    
+    <script type="text/javascript" src="http://webapi.amap.com/maps?v=1.3&key=fa6ee6f56cf5b14572e39201782fad33"></script>
+    <script type="text/javascript">
+     (function(exports){
+       
+       var map = new AMap.Map('mapContainer', {
+	 //resizeEnable: true,
+	 //rotateEnable: true,
+	 //dragEnable: true,
+	 //zoomEnable: true,
+	 //设置可缩放的级别
+	 //zooms: [3,18],
+	 //传入2D视图，设置中心点和缩放级别
+	 view: new AMap.View2D({
+	   center: new AMap.LngLat(116.397428, 39.90923),
+	   zoom: 12
+	 })
+       });			
+     })(window);
+     
+    </script>
+  </body>
+</html>
