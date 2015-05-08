@@ -3,24 +3,28 @@ require 'sinatra'
 require 'mongo'
 require 'json/ext' # required for .to_json
 
-include Mongo
+class Pumatra < Sinatra::Base
+  include Mongo
 
-configure do
-  conn = MongoClient.new("localhost", 27017)
-  set :mongo_connection, conn
-  set :mongo_db, conn.db('huo100')
-end
+  configure { set :server, :puma }
 
-get '/' do
-  content_type :json
-  settings.mongo_db.collection_names.to_json
-end
+  configure do
+    conn = MongoClient.new("localhost", 27017)
+    set :mongo_connection, conn
+    set :mongo_db, conn.db('huo100')
+  end
 
-post '/' do
-  sos = JSON.parse( request.body.read )
-  sos["GPS"]
-end
+  get '/' do
+    content_type :json
+    settings.mongo_db.collection_names.to_json
+  end
 
-get '/map' do
-  erb :map
+  post '/' do
+    sos = JSON.parse( request.body.read )
+    sos["GPS"]
+  end
+
+  get '/map' do
+    erb :map
+  end
 end
