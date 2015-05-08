@@ -1,8 +1,10 @@
 # coding: utf-8
 require 'mongo'
 require 'sinatra'
+require "sinatra/reloader" if development?
 require 'mongo'
 require 'json/ext' # required for .to_json
+
 
 include Mongo
 
@@ -26,6 +28,7 @@ post '/' do
 end
 
 get '/map' do
+  @key = 'fa6ee6f56cf5b14572e39201782fad33'
   erb :map
 end
 
